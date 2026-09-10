@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
-import { ChevronDown } from "lucide-react";
+import { Building2, Camera, ChevronDown, Network, Utensils } from "lucide-react";
 import AccountBar from "./AccountBar";
 import "./HomepageChrome.css";
 
@@ -14,11 +14,18 @@ const links = [
   { href: "/content-creator", label: "Content Creator" },
 ];
 
+const services = [
+  { slug: "pemasaran-properti", label: "Pemasaran Properti", Icon: Building2 },
+  { slug: "content-creator-management", label: "Content Creator Management", Icon: Camera },
+  { slug: "affiliate-marketing", label: "Affiliate Marketing", Icon: Network },
+  { slug: "konten-kuliner", label: "Konten Kuliner", Icon: Utensils },
+];
+
 export default function Navbar({ kategori }: { kategori: { slug: string; nama: string }[] }) {
   const header = useRef<HTMLElement>(null);
   const bidang = useRef<HTMLDetailsElement>(null);
   const pathname = usePathname();
-  const bidangAktif = pathname === "/bidang" || kategori.some(category => pathname === `/${category.slug}`);
+  const bidangAktif = pathname === "/bidang" || pathname.startsWith("/bidang/") || kategori.some(category => pathname === `/${category.slug}`);
 
   useEffect(() => {
     if (!header.current) return;
@@ -42,7 +49,7 @@ export default function Navbar({ kategori }: { kategori: { slug: string; nama: s
           <Link href="/about" aria-current={pathname === "/about" ? "page" : undefined}>About</Link>
           <details ref={bidang} className="navbar-bidang" onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) event.currentTarget.open = false; }} onKeyDown={event => { if (event.key === "Escape") { event.currentTarget.open = false; event.currentTarget.querySelector("summary")?.focus(); } }}>
             <summary data-active={bidangAktif}>Bidang<ChevronDown size={14} aria-hidden="true" /></summary>
-            <div className="navbar-category-menu"><Link href="/bidang" aria-current={pathname === "/bidang" ? "page" : undefined} onClick={() => { if (bidang.current) bidang.current.open = false; }}>Semua bidang</Link>{kategori.map(category => <Link key={category.slug} href={`/${category.slug}`} aria-current={pathname === `/${category.slug}` ? "page" : undefined} onClick={() => { if (bidang.current) bidang.current.open = false; }}>{category.nama}</Link>)}</div>
+            <div className="navbar-category-menu">{services.map(({ slug, label, Icon }) => <Link key={slug} href={`/bidang/${slug}`} aria-current={pathname === `/bidang/${slug}` ? "page" : undefined} onClick={() => { if (bidang.current) bidang.current.open = false; }}><Icon size={18} aria-hidden="true" /><span>{label}</span></Link>)}</div>
           </details>
           {links.map(link => <Link key={link.href} href={link.href} aria-current={pathname === link.href ? "page" : undefined}>{link.label}</Link>)}
         </nav>

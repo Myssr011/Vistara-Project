@@ -5,12 +5,10 @@ import { useEffect, useRef, useState } from "react";
 import CategoryPills from "./CategoryPills";
 import SearchBar from "./SearchBar";
 
-const HERO_IMAGE = "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1920&q=80&auto=format&fit=crop";
+const HERO_IMAGE = "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80&auto=format&fit=crop";
 
 export default function HeroSearch() {
   const anchor = useRef<HTMLSpanElement>(null);
-  const slot = useRef<HTMLDivElement>(null);
-  const toolbar = useRef<HTMLDivElement>(null);
   const [sticky, setSticky] = useState(false);
 
   useEffect(() => {
@@ -31,30 +29,23 @@ export default function HeroSearch() {
     return () => { resize.disconnect(); intersection.disconnect(); };
   }, []);
 
-  useEffect(() => {
-    if (sticky || !toolbar.current) return;
-    const reserve = () => {
-      if (slot.current && toolbar.current) slot.current.style.minHeight = `${toolbar.current.getBoundingClientRect().height}px`;
-    };
-    const resize = new ResizeObserver(reserve);
-    resize.observe(toolbar.current);
-    reserve();
-    return () => resize.disconnect();
-  }, [sticky]);
-
   return (
     <section className="hero-search" aria-label="Pencarian Vistara">
       <Image src={HERO_IMAGE} alt="" fill priority sizes="100vw" className="hero-photo" />
       <div className="hero-shade" />
       <div className="hero-content">
         <h1>Vistara</h1>
-        <p className="hero-subtitle">Satu pencarian, semua kebutuhan.</p>
-        <div ref={slot} className="hero-toolbar-slot">
+        <p className="hero-subtitle">Menghubungkan Brand, Properti, dan Audiens Melalui Konten Kreatif.</p>
+        <div className="hero-toolbar-slot">
           <span ref={anchor} className="hero-toolbar-anchor" aria-hidden="true" />
-          <div ref={toolbar} className="hero-toolbar" data-sticky={sticky}>
-            <div className="hero-toolbar-inner"><SearchBar compact={sticky} /><CategoryPills /></div>
+          <div className="hero-toolbar transition-all duration-300" data-sticky={sticky}>
+            <div className="hero-toolbar-backdrop" aria-hidden="true">
+              <Image src={HERO_IMAGE} alt="" fill sizes="100vw" className="hero-photo" />
+            </div>
+            <div className="hero-toolbar-inner"><SearchBar compact={sticky} /></div>
           </div>
         </div>
+        <CategoryPills />
       </div>
     </section>
   );

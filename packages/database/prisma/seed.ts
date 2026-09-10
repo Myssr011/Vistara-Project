@@ -448,14 +448,37 @@ async function seedInitialData() {
 }
 
 const ARTICLES = [
-  { slug: "promo-staycation-september", judul: "Jeda sejenak: inspirasi staycation September", tipe: "PROMO", ringkasan: "Contoh promosi: rencanakan akhir pekan dekat rumah. Harga dan penawaran akan mengikuti konfirmasi mitra; artikel ini bukan penawaran yang sedang berlaku.", foto: "photo-1607083206869-4c7672e72a8a" },
-  { slug: "fakta-danau-dan-pegunungan", judul: "Mengapa danau di pegunungan terlihat begitu biru?", tipe: "FAKTA_MENARIK", ringkasan: "Cahaya, kedalaman, dan partikel di dalam air ikut membentuk warna yang kita lihat. Kenali cerita alam di balik pemandangan perjalanan Anda.", foto: "photo-1501785888041-af3ef285b470" },
-  { slug: "tips-memilih-penginapan", judul: "Lima hal yang perlu dicek sebelum memilih penginapan", tipe: "TIPS", ringkasan: "Periksa lokasi, akses transportasi, fasilitas, aturan pembatalan, dan total biaya. Foto yang menarik belum tentu menjawab semua kebutuhan perjalanan.", foto: "photo-1566073771259-6a8506099945" },
-  { slug: "berita-ruang-kreatif-kota", judul: "Ruang kreatif kota: bertemu, berkarya, dan berbagi", tipe: "BERITA", ringkasan: "Contoh liputan editorial tentang ruang pertemuan kreator dan komunitas. Jelajahi ide kegiatan lokal, dari diskusi kecil hingga pameran karya.", foto: "photo-1524758631624-e2822e304c36" },
-  { slug: "promo-jelajah-kuliner", judul: "Agenda akhir pekan untuk pencinta kuliner", tipe: "PROMO", ringkasan: "Contoh promosi kuliner: susun daftar cafe dan restoran untuk akhir pekan. Hubungi mitra untuk mengetahui menu, harga, dan penawaran yang berlaku.", foto: "photo-1554118811-1e0d58224f24" },
-  { slug: "fakta-kopi-nusantara", judul: "Satu biji kopi, banyak cerita rasa", tipe: "FAKTA_MENARIK", ringkasan: "Varietas, lokasi tumbuh, pengolahan, dan cara seduh memengaruhi rasa kopi. Tidak heran setiap daerah punya karakter minumannya sendiri.", foto: "photo-1442512595331-e89e73853f31" },
-  { slug: "tips-apartemen-nyaman", judul: "Apartemen ringkas, ruang hidup tetap nyaman", tipe: "TIPS", ringkasan: "Manfaatkan cahaya alami dan furnitur serbaguna. Ukur ruangan sebelum membeli barang agar ruang penyimpanan dan jalur berjalan tetap nyaman.", foto: "photo-1522708323590-d24dbb6b0267" },
-  { slug: "berita-jelajah-lokal-vistara", judul: "Mengenal lebih dekat destinasi di sekitar kita", tipe: "BERITA", ringkasan: "Contoh kabar Vistara: inspirasi perjalanan kini bertemu panduan penginapan dan kuliner. Semua konten pada koleksi awal ini merupakan data demonstrasi.", foto: "photo-1476514525535-07fb3b4ae5f1" },
+  { slug: "promo-staycation-september", judul: "Program Booking Hotel Mitra Vistara Bulan Ini", tipe: "PROMO", ringkasan: "Contoh promo: kolaborasi hotel dan kreator untuk memperkenalkan pengalaman menginap. Diskon, periode, serta ketersediaan belum berlaku dan perlu konfirmasi mitra.", foto: "photo-1566073771259-6a8506099945" },
+  { slug: "fakta-danau-dan-pegunungan", judul: "Video Pendek Bisa Memperlihatkan Pengalaman, Bukan Sekadar Kamar", tipe: "FAKTA_MENARIK", ringkasan: "Contoh editorial: room tour dapat menunjukkan alur ruang dan suasana hotel yang sulit dirangkum dalam satu foto. Dampaknya pada booking perlu diukur, bukan diasumsikan.", foto: "photo-1492691527719-9d1e07e534b4" },
+  { slug: "tips-memilih-penginapan", judul: "5 Tips Memilih Content Creator untuk Brand Properti Anda", tipe: "TIPS", ringkasan: "Kenali profil audiens, pelajari portofolio, cek kualitas interaksi, sepakati brief, lalu tentukan ukuran keberhasilan. Panduan contoh untuk memulai kolaborasi properti yang terarah.", foto: "photo-1522071820081-009f0129c71c" },
+  { slug: "berita-ruang-kreatif-kota", judul: "Ruang Kolaborasi: Mempertemukan Kreator Makassar dan Brand", tipe: "BERITA", ringkasan: "Simulasi liputan Vistara Media Indonesia tentang diskusi antara kreator lokal dan pelaku usaha. Agenda dan peserta dalam tema ini belum merupakan acara yang diumumkan.", foto: "photo-1524758631624-e2822e304c36" },
+  { slug: "promo-jelajah-kuliner", judul: "Kolaborasi Konten Kuliner untuk Cafe dan Restoran", tipe: "PROMO", ringkasan: "Contoh promo: konsep produksi konten menu, suasana ruang, dan cerita pemilik usaha kuliner. Paket serta ketentuan kolaborasi akan dikonfirmasi sebelum penawaran diterbitkan.", foto: "photo-1554118811-1e0d58224f24" },
+  { slug: "fakta-kopi-nusantara", judul: "Cerita di Balik Kopi Bisa Menjadi Identitas Konten Cafe", tipe: "FAKTA_MENARIK", ringkasan: "Contoh editorial: asal biji, proses seduh, dan cara penyajian memberi sudut cerita yang berbeda. Detail yang nyata membantu konten kuliner terasa khas tanpa klaim berlebihan.", foto: "photo-1442512595331-e89e73853f31" },
+  { slug: "tips-apartemen-nyaman", judul: "Cara Membuat Room Tour Apartemen yang Informatif", tipe: "TIPS", ringkasan: "Mulai dari tata ruang, tunjukkan ukuran dengan konteks, gunakan cahaya alami, dan sebutkan fasilitas secara akurat. Panduan contoh untuk konten pemasaran apartemen.", foto: "photo-1522708323590-d24dbb6b0267" },
+  { slug: "berita-jelajah-lokal-vistara", judul: "Mengenal Arah Layanan Vistara Media Indonesia", tipe: "BERITA", ringkasan: "Contoh berita profil: pemasaran properti, content creator management, affiliate marketing, dan konten kuliner dalam satu arah kreatif. Bukan pengumuman peluncuran layanan baru.", foto: "photo-1497366754035-f200968a6e72" },
+  { slug: "promo-kreator-umkm", judul: "Program Kolaborasi Content Creator untuk UMKM", tipe: "PROMO", ringkasan: "Contoh promo: ide kolaborasi untuk membantu UMKM menyusun cerita produk bersama kreator. Biaya, jadwal, dan ruang lingkup belum ditetapkan sebagai penawaran resmi.", foto: "photo-1552664730-d307ca884978" },
+  { slug: "fakta-kreator-lokal-brand", judul: "Kreator Lokal Membawa Konteks yang Dekat dengan Audiens", tipe: "FAKTA_MENARIK", ringkasan: "Contoh editorial: bahasa, kebiasaan, dan pengetahuan tempat memberi kreator lokal sudut pandang tersendiri. Kecocokan audiens tetap lebih penting daripada lokasi kreator semata.", foto: "photo-1519389950473-47ba0277781c" },
+  { slug: "tips-konten-kuliner", judul: "Cara Membuat Konten Kuliner yang Menarik Perhatian Audiens", tipe: "TIPS", ringkasan: "Perlihatkan tekstur makanan, rekam proses penyajian, dan ceritakan rasa dengan spesifik. Panduan contoh ini mengutamakan visual jujur serta informasi menu yang jelas.", foto: "photo-1414235077428-338989a2e8c0" },
+  { slug: "berita-affiliate-properti-2026", judul: "Affiliate Marketing Properti 2026: Transparansi Jadi Bahasan", tipe: "BERITA", ringkasan: "Simulasi agenda editorial tentang tautan afiliasi, atribusi booking, dan keterbukaan komisi. Materi diskusi untuk brand properti, bukan laporan riset atau proyeksi pasar.", foto: "photo-1516321318423-f06f85e504b3" },
+  { slug: "promo-produksi-konten-hotel", judul: "Sesi Produksi Konten untuk Cerita Hotel Anda", tipe: "PROMO", ringkasan: "Contoh promo: rancangan sesi foto dan video yang mengangkat kamar, fasilitas, serta pengalaman tamu. Ketersediaan produksi dan rincian paket harus dikonfirmasi lebih dahulu.", foto: "photo-1611892440504-42a792e24d32" },
+  { slug: "fakta-affiliate-transparan", judul: "Tautan Afiliasi dan Konten Sponsor Bukan Hal yang Sama", tipe: "FAKTA_MENARIK", ringkasan: "Contoh editorial: afiliasi biasanya terkait hasil yang terlacak, sementara sponsor mengikuti kesepakatan kerja sama. Keduanya perlu disampaikan dengan jelas kepada audiens.", foto: "photo-1556742049-0cfed4f6a45d" },
+  { slug: "tips-brief-kolaborasi-brand", judul: "Brief Kolaborasi yang Jelas, Ruang Kreatif yang Tetap Luas", tipe: "TIPS", ringkasan: "Tuliskan tujuan, pesan utama, batas klaim, hasil kerja, hak penggunaan, dan jadwal. Panduan contoh untuk menyatukan ekspektasi brand dengan cara bercerita kreator.", foto: "photo-1455390582262-044cdead277a" },
+  { slug: "berita-diskusi-konten-kuliner", judul: "Dari Dapur ke Layar: Percakapan Brand Kuliner dan Kreator", tipe: "BERITA", ringkasan: "Simulasi liputan diskusi tentang pengambilan gambar makanan, izin produksi, dan penyampaian ulasan. Tema ini merupakan materi contoh, bukan dokumentasi acara yang telah berlangsung.", foto: "photo-1517248135467-4c7edcad34c4" },
+  { slug: "promo-konten-apartemen", judul: "Konsep Kampanye Kreatif untuk Apartemen Mitra", tipe: "PROMO", ringkasan: "Contoh promo: rangkaian room tour dan cerita lingkungan untuk memperkenalkan apartemen. Tidak mencakup diskon sewa atau jaminan hasil; ketentuan menunggu kesepakatan mitra.", foto: "photo-1560448204-e02f11c3d0e2" },
+  { slug: "fakta-metrik-konten", judul: "Jumlah Tayangan Tidak Sama dengan Jumlah Calon Pelanggan", tipe: "FAKTA_MENARIK", ringkasan: "Contoh editorial: tayangan, klik, pertanyaan, dan booking menggambarkan tindakan yang berbeda. Memilih metrik sesuai tujuan membantu brand membaca hasil konten dengan lebih tepat.", foto: "photo-1515378791036-0648a3ef77b2" },
+  { slug: "tips-kalender-konten-properti", judul: "Menyusun Kalender Konten Properti yang Berkelanjutan", tipe: "TIPS", ringkasan: "Seimbangkan informasi fasilitas, cerita sekitar, jawaban pertanyaan tamu, dan kolaborasi kreator. Panduan contoh untuk membangun ritme publikasi yang realistis bagi tim.", foto: "photo-1432888622747-4eb9a8efeb07" },
+  { slug: "berita-create-connect-grow", judul: "Create, Connect, Grow: Arah Cerita di Sorotan Vistara", tipe: "BERITA", ringkasan: "Contoh kabar redaksi: ruang editorial untuk mempertemukan gagasan kreatif dan kebutuhan brand properti. Seluruh artikel dalam koleksi awal ini adalah materi demonstrasi.", foto: "photo-1522071820081-009f0129c71c" },
+] as const;
+
+const CREATORS = [
+  { id: "demo-creator-nadia", nama: "Nadia Prameswari", niche: "Lifestyle & Travel", followers: 125_000, platform_utama: "Instagram", foto: "photo-1534528741775-53994a69daeb", bio: "Menceritakan perjalanan kota dan pengalaman menginap melalui foto serta video pendek yang hangat." },
+  { id: "demo-creator-raka", nama: "Raka Adiputra", niche: "Food & Kuliner", followers: 240_000, platform_utama: "TikTok", foto: "photo-1500648767791-00dcc994a43e", bio: "Mengangkat cerita di balik menu, dari dapur usaha rumahan hingga cafe lokal." },
+  { id: "demo-creator-ayu", nama: "Ayu Lestari", niche: "Properti", followers: 68_000, platform_utama: "YouTube", foto: "photo-1580489944761-15a19d654956", bio: "Menyajikan room tour apartemen dan hotel dengan perhatian pada fungsi ruang dan detail fasilitas." },
+  { id: "demo-creator-dimas", nama: "Dimas Pratama", niche: "Fashion", followers: 92_000, platform_utama: "Instagram", foto: "photo-1506794778202-cad84cf45f1d", bio: "Merangkai gaya sehari-hari dan cerita label lokal melalui editorial foto yang sederhana." },
+  { id: "demo-creator-salsabila", nama: "Salsabila Putri", niche: "Lifestyle & Travel", followers: 480_000, platform_utama: "TikTok", foto: "photo-1524504388940-b1c1722653e1", bio: "Berbagi keseharian, destinasi kota, dan ide perjalanan akhir pekan lewat video bercerita." },
+  { id: "demo-creator-fajar", nama: "Fajar Ramadhan", niche: "Food & Kuliner", followers: 18_000, platform_utama: "Instagram", foto: "photo-1517841905240-472988babdf9", bio: "Mendokumentasikan proses seduh kopi, menu musiman, dan orang-orang di balik usaha kuliner." },
+  { id: "demo-creator-intan", nama: "Intan Permata", niche: "Properti", followers: 156_000, platform_utama: "Instagram", foto: "photo-1531123897727-8f129e1688ce", bio: "Menghubungkan cerita hunian dengan kebutuhan audiens melalui konten interior dan tur properti." },
+  { id: "demo-creator-bagas", nama: "Bagas Mahendra", niche: "Fashion", followers: 315_000, platform_utama: "YouTube", foto: "photo-1506794778202-cad84cf45f1d", bio: "Membahas padu padan, detail material, dan proses kreatif di balik koleksi brand lokal." },
 ] as const;
 
 async function main() {
@@ -466,16 +489,20 @@ async function main() {
   if (existing.every(count => count === 0)) await seedInitialData();
   else console.log("Data existing dipertahankan; seed data awal dilewati.");
 
-  await prisma.$transaction(ARTICLES.map((article, index) => prisma.article.upsert({
-    where: { slug: article.slug },
-    update: {},
-    create: {
+  await prisma.$transaction(ARTICLES.map((article, index) => {
+    const data = {
       slug: article.slug, judul: article.judul, tipe: article.tipe,
       ringkasan: article.ringkasan, gambar_url: UNSPLASH(article.foto),
       published_at: new Date(Date.UTC(2026, 8, 9 - index, 0)),
-    },
-  })));
+    };
+    return prisma.article.upsert({ where: { slug: article.slug }, update: data, create: data });
+  }));
   console.log(`Seed Article selesai: ${ARTICLES.length} artikel, tanpa menghapus data existing.`);
+  await prisma.$transaction(CREATORS.map(({ foto, ...creator }) => {
+    const data = { ...creator, foto_url: UNSPLASH(foto), bio: `Profil fiktif untuk demonstrasi. ${creator.bio}` };
+    return prisma.creator.upsert({ where: { id: creator.id }, update: data, create: data });
+  }));
+  console.log(`Seed Creator selesai: ${CREATORS.length} profil contoh, tanpa menghapus data existing.`);
 }
 
 main()
