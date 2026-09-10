@@ -1,0 +1,113 @@
+@reference "../apps/web/src/app/globals.css";
+
+@layer components {
+  .discover-feed {
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-6: 1.5rem;
+    --radius-card: 1rem;
+    --surface-card: #fff;
+    --surface-page: var(--color-surface);
+    --text-heading: var(--color-primary-deep);
+    --text-secondary: var(--color-muted);
+    --spacing-grid: var(--space-4);
+    --spacing-section: var(--space-6);
+    --feed-gap: var(--spacing-grid);
+    --feed-card-padding: var(--spacing-grid);
+    --feed-card-radius: var(--radius-card);
+    --feed-card-shadow: 0 2px 8px rgb(6 57 112 / 6%);
+    @apply font-sans;
+    padding: var(--space-6) var(--space-4) 3rem;
+    background: var(--surface-page);
+    color: var(--text-heading);
+    letter-spacing: 0;
+  }
+
+  .feed-shell {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "main" "sidebar";
+    gap: var(--feed-gap);
+    max-width: 1440px;
+    margin-inline: auto;
+  }
+  .feed-main { grid-area: main; display: grid; gap: var(--spacing-section); min-width: 0; }
+  .feed-sidebar { grid-area: sidebar; display: grid; align-content: start; gap: var(--feed-gap); min-width: 0; }
+  .feed-lead { display: grid; gap: var(--feed-gap); grid-template-areas: "carousel" "story-one" "story-two"; }
+  .feed-featured { grid-area: carousel; }
+  .feed-story-one { grid-area: story-one; }
+  .feed-story-two { grid-area: story-two; }
+  .feed-row { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--feed-gap); }
+  .feed-reveal { min-width: 0; height: 100%; }
+  .feed-header { display: flex; gap: var(--space-3); align-items: center; justify-content: space-between; min-height: 44px; margin-bottom: var(--space-3); }
+  .feed-header h2, .feed-widget h2 { display: flex; align-items: center; gap: var(--space-2); font-size: 1rem; font-weight: 700; line-height: 1.5; }
+  .feed-header h2 svg, .feed-widget h2 svg { flex-shrink: 0; }
+  .feed-options { position: relative; flex-shrink: 0; }
+  .feed-options summary, .feed-carousel-controls button { display: flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; cursor: pointer; border-radius: 8px; }
+  .feed-options summary { list-style: none; }
+  .feed-options summary::-webkit-details-marker { display: none; }
+  .feed-options > a { position: absolute; z-index: 5; right: 0; top: 100%; padding: var(--space-3) var(--space-4); min-width: 130px; border-radius: 8px; background: var(--surface-card); box-shadow: 0 4px 16px rgb(6 57 112 / 16%); font-size: 0.875rem; }
+  .feed-card { display: flex; height: 100%; min-width: 0; flex-direction: column; overflow: hidden; background: var(--surface-card); border-radius: var(--feed-card-radius); box-shadow: var(--feed-card-shadow); text-decoration: none; transition: transform 180ms ease-out, box-shadow 180ms ease-out; }
+  .feed-media { position: relative; display: grid; place-items: center; aspect-ratio: 4 / 3; background: var(--color-primary-soft); flex-shrink: 0; }
+  .feed-image { object-fit: cover; }
+  .feed-image-placeholder { color: var(--color-primary); }
+  .feed-badges { position: absolute; inset: var(--space-3) var(--space-3) auto; display: flex; gap: var(--space-2); flex-wrap: wrap; }
+  .feed-badge { display: inline-flex; align-items: center; gap: 4px; max-width: 100%; border-radius: 999px; padding: 4px 8px; font-size: 0.75rem; font-weight: 600; background: var(--color-primary-soft); color: var(--color-primary-deep); overflow-wrap: anywhere; }
+  .feed-badge[data-tone="promo"] { background: var(--color-badge-warning); color: var(--color-badge-warning-fg); }
+  .feed-badge[data-tone="new"] { @apply bg-emerald-100 text-emerald-800; }
+  .feed-location { background: var(--surface-card); }
+  .feed-card-copy { padding: var(--feed-card-padding); display: flex; flex: 1; flex-direction: column; gap: var(--space-2); }
+  .feed-source, .feed-region { font-size: 0.75rem; line-height: 1.5; color: var(--text-secondary); }
+  .feed-region { margin-bottom: var(--space-3); }
+  .feed-card h3 { font-size: 0.875rem; font-weight: 700; line-height: 1.55; overflow-wrap: anywhere; }
+  .feed-card-featured h3 { font-size: 1.125rem; }
+  .feed-excerpt { font-size: 0.875rem; line-height: 1.6; color: var(--text-secondary); }
+  .feed-card-meta { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; justify-content: space-between; margin-top: auto; padding-top: var(--space-2); font-size: 0.75rem; }
+  .feed-card-meta p { color: var(--color-primary); font-weight: 700; }
+  .feed-rating { display: inline-flex; gap: 4px; align-items: center; color: var(--text-secondary); }
+  .feed-rating svg { @apply text-amber-700; }
+  .feed-carousel { display: flex; flex-direction: column; height: 100%; min-width: 0; }
+  .feed-slide { flex: 1; min-height: 0; }
+  .feed-carousel-controls { display: flex; align-items: center; justify-content: space-between; gap: 4px; padding-top: 4px; }
+  .feed-dots { display: flex; justify-content: center; flex-wrap: wrap; min-width: 0; }
+  .feed-dots span { width: 6px; height: 6px; border-radius: 999px; background: var(--text-secondary); }
+  .feed-dots [aria-current="true"] span { width: 18px; background: var(--color-primary); }
+  .feed-widget { padding: var(--feed-card-padding); border-radius: var(--feed-card-radius); background: var(--surface-card); box-shadow: var(--feed-card-shadow); }
+  .feed-widget h2 { margin-bottom: var(--space-4); }
+  .feed-category-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2); }
+  .feed-category-grid button { display: flex; align-items: center; justify-content: center; flex-direction: column; gap: var(--space-2); padding: var(--space-3) 4px; min-height: 76px; border-radius: 8px; cursor: pointer; font-size: 0.75rem; line-height: 1.5; background: var(--color-primary-soft); }
+  .feed-category-grid button[aria-pressed="true"] { background: var(--color-primary); color: #fff; font-weight: 700; box-shadow: inset 0 -3px 0 var(--color-primary-deep); }
+  .feed-widget fieldset { display: grid; gap: var(--space-3); min-width: 0; }
+  .feed-widget label { display: grid; gap: 4px; font-size: 0.75rem; font-weight: 600; }
+  .feed-widget input, .feed-widget select { width: 100%; min-width: 0; min-height: 44px; padding: 8px; border: 1px solid var(--text-secondary); border-radius: 8px; background: var(--surface-card); color: var(--text-heading); font-size: 1rem; }
+  .feed-submit { display: flex; gap: var(--space-2); align-items: center; justify-content: center; border-radius: 8px; min-height: 44px; background: var(--color-primary); color: #fff; cursor: pointer; font-size: 0.875rem; }
+  .feed-widget fieldset:disabled { opacity: 0.65; }
+  .feed-feedback { margin-top: var(--space-2); font-size: 0.875rem; line-height: 1.5; }
+  .feed-empty { padding: var(--space-6) 0; color: var(--text-secondary); font-size: 0.875rem; }
+  .discover-feed :is(a, button, summary, input, select):focus-visible { outline: 3px solid var(--color-primary); outline-offset: 3px; }
+  .feed-skeleton :is(.feed-lead, .feed-row, .feed-sidebar) > div { border-radius: var(--feed-card-radius); background: var(--color-primary-soft); min-height: 310px; }
+  .feed-skeleton .feed-sidebar > div { min-height: 220px; }
+
+  @media (min-width: 768px) {
+    .feed-lead { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-areas: "carousel carousel" "story-one story-two"; }
+    .feed-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .feed-card-featured .feed-media { aspect-ratio: 2 / 1; }
+  }
+  @media (min-width: 1024px) {
+    .feed-shell { grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-areas: "main main main sidebar"; }
+  }
+  @media (min-width: 1200px) {
+    .feed-shell { grid-template-columns: repeat(5, minmax(0, 1fr)); grid-template-areas: "main main main main sidebar"; }
+    .feed-lead { grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-areas: "carousel carousel story-one story-two"; }
+    .feed-row { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  }
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .feed-card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgb(6 57 112 / 12%); }
+    .feed-options summary:hover, .feed-carousel-controls button:hover { background: var(--color-primary-soft); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .feed-card { transition: none; }
+    .feed-reveal { transform: none !important; opacity: 1 !important; }
+  }
+}

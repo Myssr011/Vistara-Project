@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+/* Design token Vistara. Tailwind v4 dikonfigurasi lewat CSS, bukan tailwind.config.js. */
+@theme {
+  --color-primary: #0a66c2;
+  --color-primary-soft: #e8f1fb;
+  --color-primary-deep: #063970;
+  --color-surface: #f5f7fa;
+  --color-muted: #6b7280;
+  --color-badge-warning: #fef3c7;
+  --color-badge-warning-fg: #92400e;
+
+  --font-sans: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-brand: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: #171717;
+  font-family: var(--font-sans);
+}
+
+/* Baris kategori digeser horizontal di mobile, scrollbar-nya disembunyikan. */
+@utility no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

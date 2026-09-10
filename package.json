@@ -1,0 +1,22 @@
+{
+  "name": "vistara",
+  "private": true,
+  "packageManager": "pnpm@10.32.1",
+  "scripts": {
+    "dev": "node scripts/dev.mjs && turbo dev",
+    "dev:only": "turbo dev",
+    "setup": "node scripts/dev.mjs",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "check-types": "turbo check-types",
+    "db:generate": "turbo db:generate",
+    "db:push": "pnpm --filter @vistara/database db:push",
+    "db:seed": "pnpm --filter @vistara/database db:seed"
+  },
+  "devDependencies": {
+    "turbo": "^2.10.12"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
