@@ -31,7 +31,7 @@ export default async function CreatorPage({ searchParams }: PageProps<"/content-
         {["", ...NICHES].map(value => <Link key={value} href={value ? `/content-creator?niche=${encodeURIComponent(value)}` : "/content-creator"} aria-current={niche === value ? "page" : undefined} scroll={false}>{value || "Semua"}</Link>)}
       </nav>
       <div className={styles.grid}>
-        {creators.map((creator, index) => <CreatorCard key={creator.id} creator={creator} priority={index < 4} />)}
+        {creators.map(creator => <CreatorCard key={creator.id} creator={creator} />)}
       </div>
       {!creators.length && <p className={styles.empty}>Belum ada kreator aktif untuk niche ini. <Link href="/content-creator">Lihat semua kreator</Link></p>}
       <p className={styles.disclaimer}>Profil contoh menggunakan identitas fiktif, foto ilustrasi, dan angka followers simulasi; bukan daftar talent terverifikasi.</p>

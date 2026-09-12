@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///workspaces/Vistara-Project/apps/web/src/app/cari/loading.tsx"],"sourcesContent":["import PageSkeleton from \"@/components/PageSkeleton\";\nexport default function Loading() { return <PageSkeleton />; }"],"names":["Loading"],"mappings":";;;;;AAAA;;;AACe,SAASA;IAAY,qBAAO,0dAAC,4JAAY;;;;;AAAK"}}]
+}

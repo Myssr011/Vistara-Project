@@ -1,0 +1,201 @@
+/* [project]/apps/web/src/components/CreatorMarquee.module.css [app-client] (css) */
+.CreatorMarquee-module__Rx0L1W__section {
+  background: var(--panel-bg);
+  color: var(--ink);
+  border-top: 1px solid var(--line);
+  padding: 32px 24px 40px;
+}
+
+.CreatorMarquee-module__Rx0L1W__inner {
+  max-width: 1440px;
+  margin-inline: auto;
+  container-type: inline-size;
+}
+
+.CreatorMarquee-module__Rx0L1W__heading {
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  display: flex;
+}
+
+.CreatorMarquee-module__Rx0L1W__heading h2 {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.CreatorMarquee-module__Rx0L1W__heading p {
+  color: var(--subtle);
+  margin-top: 6px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.CreatorMarquee-module__Rx0L1W__pause {
+  border: 1px solid var(--line);
+  width: 44px;
+  height: 44px;
+  color: var(--chrome-accent);
+  cursor: pointer;
+  border-radius: 6px;
+  flex-shrink: 0;
+  place-items: center;
+  display: grid;
+}
+
+.CreatorMarquee-module__Rx0L1W__pause:hover {
+  background: var(--hover-surface);
+}
+
+.CreatorMarquee-module__Rx0L1W__viewport {
+  overflow: hidden;
+}
+
+.CreatorMarquee-module__Rx0L1W__track {
+  width: max-content;
+  animation: 36s linear infinite CreatorMarquee-module__Rx0L1W__creator-scroll;
+  display: flex;
+}
+
+.CreatorMarquee-module__Rx0L1W__group {
+  flex-shrink: 0;
+  gap: 24px;
+  width: max-content;
+  min-width: 100cqw;
+  margin: 0;
+  padding: 4px 24px 4px 0;
+  list-style: none;
+  display: flex;
+}
+
+.CreatorMarquee-module__Rx0L1W__item {
+  flex: none;
+  width: calc(20cqw - 19.2px);
+}
+
+.CreatorMarquee-module__Rx0L1W__card {
+  border: 1px solid var(--line);
+  background: var(--page-bg);
+  text-align: center;
+  border-radius: 8px;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding-bottom: 16px;
+  display: flex;
+  overflow: hidden;
+}
+
+.CreatorMarquee-module__Rx0L1W__photo {
+  aspect-ratio: 1;
+  background: var(--hover-surface);
+  flex-shrink: 0;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.CreatorMarquee-module__Rx0L1W__photo img {
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.CreatorMarquee-module__Rx0L1W__name {
+  overflow-wrap: anywhere;
+  margin: 16px 16px 0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.CreatorMarquee-module__Rx0L1W__niche {
+  color: var(--chrome-accent);
+  background: var(--hover-surface);
+  border-radius: 4px;
+  margin: 8px 16px 0;
+  padding: 3px 6px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.CreatorMarquee-module__Rx0L1W__card:hover {
+  border-color: var(--chrome-accent);
+}
+
+.CreatorMarquee-module__Rx0L1W__card:focus-visible, .CreatorMarquee-module__Rx0L1W__pause:focus-visible {
+  outline: 2px solid var(--chrome-accent);
+  outline-offset: -3px;
+}
+
+.CreatorMarquee-module__Rx0L1W__track[data-paused="true"], .CreatorMarquee-module__Rx0L1W__viewport:hover .CreatorMarquee-module__Rx0L1W__track {
+  animation-play-state: paused;
+}
+
+.CreatorMarquee-module__Rx0L1W__viewport:has(.CreatorMarquee-module__Rx0L1W__card:focus-visible) {
+  overflow-x: auto;
+}
+
+.CreatorMarquee-module__Rx0L1W__viewport:has(.CreatorMarquee-module__Rx0L1W__card:focus-visible) .CreatorMarquee-module__Rx0L1W__track {
+  animation: none;
+}
+
+.CreatorMarquee-module__Rx0L1W__disclaimer {
+  color: var(--subtle);
+  margin-top: 18px;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+@keyframes CreatorMarquee-module__Rx0L1W__creator-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 1099px) {
+  .CreatorMarquee-module__Rx0L1W__item {
+    width: calc(33.3333cqw - 16px);
+  }
+}
+
+@media (max-width: 767px) {
+  .CreatorMarquee-module__Rx0L1W__section {
+    padding: 28px 16px 32px;
+  }
+
+  .CreatorMarquee-module__Rx0L1W__heading h2 {
+    font-size: 20px;
+  }
+
+  .CreatorMarquee-module__Rx0L1W__heading p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 599px) {
+  .CreatorMarquee-module__Rx0L1W__item {
+    width: 100cqw;
+  }
+
+  .CreatorMarquee-module__Rx0L1W__photo {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .CreatorMarquee-module__Rx0L1W__track {
+    animation: none;
+  }
+
+  .CreatorMarquee-module__Rx0L1W__group[aria-hidden="true"], .CreatorMarquee-module__Rx0L1W__pause {
+    display: none;
+  }
+
+  .CreatorMarquee-module__Rx0L1W__viewport {
+    overflow-x: auto;
+  }
+}
+
+/*# sourceMappingURL=apps_web_src_components_CreatorMarquee_module_css_1igg3k2._.single.css.map*/

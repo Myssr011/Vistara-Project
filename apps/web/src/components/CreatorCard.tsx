@@ -8,12 +8,12 @@ export type CreatorCardData = Pick<Creator, "id" | "nama" | "niche" | "foto_url"
 
 const platformIcons = { Instagram: Camera, TikTok: Music2, YouTube: Video };
 
-export default function CreatorCard({ creator, priority = false, heading = "h2" }: { creator: CreatorCardData; priority?: boolean; heading?: "h2" | "h3" }) {
+export default function CreatorCard({ creator, heading = "h2" }: { creator: CreatorCardData; heading?: "h2" | "h3" }) {
   const Platform = platformIcons[creator.platform_utama as keyof typeof platformIcons] ?? Music2;
   const Heading = heading;
 
   return <article className={styles.card}>
-    <Link className={styles.portrait} href={`/content-creator/${creator.id}`} aria-label={`Lihat profil ${creator.nama}`}><Image src={creator.foto_url} alt={`Potret ilustrasi ${creator.nama}`} fill priority={priority} sizes="(max-width: 599px) 100vw, (max-width: 1099px) 50vw, 25vw" /></Link>
+    <Link className={styles.portrait} href={`/content-creator/${creator.id}`} aria-label={`Lihat profil ${creator.nama}`}><Image src={creator.foto_url} alt={`Potret ilustrasi ${creator.nama}`} fill sizes="(max-width: 599px) 100vw, (max-width: 1099px) 50vw, 25vw" /></Link>
     <div className={styles.copy}>
       <span className={styles.niche}>{creator.niche}</span>
       <Heading>{creator.nama}</Heading>

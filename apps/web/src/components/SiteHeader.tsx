@@ -42,9 +42,9 @@ export default function SiteHeader({
           <Image
             src="/vistara-mark.png"
             alt=""
-            width={789}
-            height={750}
-            priority
+            width={30}
+            height={28}
+            sizes="30px"
             className={`h-7 w-auto ${transparan ? "brightness-0 invert" : ""}`}
           />
           <span

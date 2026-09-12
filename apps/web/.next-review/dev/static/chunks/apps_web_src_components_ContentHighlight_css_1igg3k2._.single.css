@@ -1,0 +1,254 @@
+/* [project]/apps/web/src/components/ContentHighlight.css [app-client] (css) */
+.content-highlight {
+  background: var(--page-bg);
+  color: var(--ink);
+  padding: 32px 24px 64px;
+}
+
+.content-inner {
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+.content-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 24px;
+  display: grid;
+}
+
+.article-card[data-size="large"], .content-skeleton > div:nth-child(9n+6) {
+  grid-column: span 2;
+}
+
+.article-card[data-size="large"] .article-image {
+  aspect-ratio: 16 / 10;
+}
+
+.article-card[data-size="large"] h3 {
+  font-size: 24px;
+  line-height: 1.35;
+}
+
+.article-card[data-size="small"] h3 {
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-size: 14px;
+  display: -webkit-box;
+  overflow: hidden;
+}
+
+.article-card {
+  background: var(--panel-bg);
+  border: 1px solid var(--line);
+  min-width: 0;
+  color: var(--ink);
+  border-radius: 8px;
+  flex-direction: column;
+  transition: transform .18s ease-out;
+  display: flex;
+  overflow: hidden;
+}
+
+.article-image {
+  aspect-ratio: 1;
+  background: var(--hover-surface);
+  flex-shrink: 0;
+  position: relative;
+}
+
+.article-image img {
+  object-fit: cover;
+}
+
+.article-badge {
+  color: #064c2b;
+  background: #dcfce7;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+
+.article-badge[data-type="PROMO"] {
+  color: #92400e;
+  background: #fef3c7;
+}
+
+.article-badge[data-type="FAKTA_MENARIK"] {
+  color: #9d174d;
+  background: #fce7f3;
+}
+
+.article-badge[data-type="BERITA"] {
+  color: #075985;
+  background: #e0f2fe;
+}
+
+.article-copy {
+  align-content: start;
+  gap: 10px;
+  padding: 16px;
+  display: grid;
+}
+
+.article-source {
+  color: var(--subtle);
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  display: flex;
+}
+
+.article-card h3 {
+  overflow-wrap: anywhere;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.article-summary {
+  color: var(--subtle);
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  font-size: 13px;
+  line-height: 1.7;
+  display: -webkit-box;
+  overflow: hidden;
+}
+
+.content-empty {
+  color: var(--subtle);
+  padding: 40px 0;
+}
+
+.content-skeleton > div {
+  background: var(--hover-surface);
+  border-radius: 8px;
+  min-height: 360px;
+}
+
+.listing-section {
+  background: var(--page-bg);
+  color: var(--ink);
+}
+
+.listing-section > div {
+  max-width: 1488px;
+  padding: 32px 24px 48px;
+}
+
+.listing-section h2, .listing-section h3 {
+  color: var(--ink);
+}
+
+.listing-section .listing-card {
+  background: var(--panel-bg);
+  color: var(--ink);
+}
+
+.listing-section .text-muted {
+  color: var(--subtle);
+}
+
+:root[data-theme="dark"] .listing-section p .text-primary {
+  color: #79bbff;
+}
+
+.listing-section a:focus-visible {
+  outline-offset: 3px;
+  outline: 2px solid #0a66c2;
+}
+
+.article-detail {
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 24px 64px;
+}
+
+.article-detail h1 {
+  margin-block: 24px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.article-detail > img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 16px;
+  width: 100%;
+  height: auto;
+  margin-block: 24px;
+}
+
+.article-detail p {
+  line-height: 1.8;
+}
+
+.article-detail a {
+  text-underline-offset: 4px;
+  text-decoration: underline;
+}
+
+.article-detail-meta {
+  color: var(--subtle);
+  font-size: 13px;
+}
+
+@media (max-width: 1099px) {
+  .content-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .article-card[data-size="large"] h3 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .content-highlight {
+    padding: 24px 16px 48px;
+  }
+
+  .listing-section > div {
+    padding-inline: 16px;
+  }
+}
+
+@media (max-width: 599px) {
+  .content-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .article-card[data-size="large"], .content-skeleton > div:nth-child(n) {
+    grid-column: auto;
+  }
+
+  .article-image {
+    aspect-ratio: 16 / 10;
+  }
+
+  .article-card[data-size="large"] .article-image {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .content-grid > .article-card:hover {
+    transform: translateY(-3px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .article-card {
+    transition: none;
+  }
+}
+
+/*# sourceMappingURL=apps_web_src_components_ContentHighlight_css_1igg3k2._.single.css.map*/

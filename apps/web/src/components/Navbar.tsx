@@ -44,7 +44,7 @@ export default function Navbar({ kategori }: { kategori: { slug: string; nama: s
     <header ref={header} className="vistara-navbar">
       <a href="#main-content" className="skip-link">Lewati navigasi</a>
       <div className="navbar-inner">
-        <Link href="/" className="navbar-brand" aria-label="Vistara beranda"><Image src="/vistara-mark.png" alt="" width={789} height={750} priority /><span>VISTARA</span></Link>
+        <Link href="/" className="navbar-brand" aria-label="Vistara beranda"><Image src="/vistara-mark.png" alt="" width={28} height={28} sizes="28px" /><span>VISTARA</span></Link>
         <nav aria-label="Navigasi utama" className="navbar-links">
           <Link href="/about" aria-current={pathname === "/about" ? "page" : undefined}>About</Link>
           <details ref={bidang} className="navbar-bidang" onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) event.currentTarget.open = false; }} onKeyDown={event => { if (event.key === "Escape") { event.currentTarget.open = false; event.currentTarget.querySelector("summary")?.focus(); } }}>

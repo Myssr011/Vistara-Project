@@ -1,0 +1,554 @@
+/* [project]/apps/web/src/components/AuthExperience.module.css [app-client] (css) */
+.AuthExperience-module__zcwgwq__page {
+  --auth-accent: #0a66c2;
+  min-height: calc(100svh - var(--navbar-height, 72px));
+  background: var(--panel-bg, #fff);
+  color: var(--ink, #15334b);
+  grid-template-columns: 3fr 2fr;
+  display: grid;
+}
+
+.AuthExperience-module__zcwgwq__formSide {
+  align-items: center;
+  min-width: 0;
+  padding: 44px 48px;
+  display: flex;
+}
+
+.AuthExperience-module__zcwgwq__formInner {
+  width: 100%;
+  max-width: 480px;
+  margin-inline: auto;
+}
+
+.AuthExperience-module__zcwgwq__wordmark {
+  font-family: var(--font-brand);
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: 600;
+  display: inline-flex;
+}
+
+.AuthExperience-module__zcwgwq__wordmark span {
+  font-family: var(--font-sans);
+  border-left: 1px solid var(--line);
+  max-width: 92px;
+  padding-left: 12px;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.AuthExperience-module__zcwgwq__heading {
+  margin: 36px 0 28px;
+}
+
+.AuthExperience-module__zcwgwq__heading > p:first-child {
+  color: var(--chrome-accent, #0a66c2);
+  margin-bottom: 12px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.AuthExperience-module__zcwgwq__heading h1 {
+  text-wrap: balance;
+  max-width: 400px;
+  font-size: 30px;
+  font-weight: 650;
+  line-height: 1.25;
+}
+
+.AuthExperience-module__zcwgwq__heading > p:last-child {
+  color: var(--subtle);
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.AuthExperience-module__zcwgwq__fields {
+  border: 0;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.AuthExperience-module__zcwgwq__field {
+  min-width: 0;
+  margin-bottom: 18px;
+}
+
+.AuthExperience-module__zcwgwq__field label, .AuthExperience-module__zcwgwq__accountTypes legend {
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 650;
+  display: block;
+}
+
+.AuthExperience-module__zcwgwq__inputWrap {
+  position: relative;
+}
+
+.AuthExperience-module__zcwgwq__field input, .AuthExperience-module__zcwgwq__field select {
+  background: var(--panel-bg, #fff);
+  width: 100%;
+  min-width: 0;
+  height: 48px;
+  color: var(--ink);
+  border: 1px solid var(--line, #d8e1e9);
+  border-radius: 6px;
+  padding: 12px 14px;
+  font-size: 14px;
+  transition: border-color .15s, box-shadow .15s;
+}
+
+.AuthExperience-module__zcwgwq__field input::placeholder {
+  color: var(--subtle);
+  opacity: .8;
+}
+
+.AuthExperience-module__zcwgwq__inputWrap:has(.AuthExperience-module__zcwgwq__reveal) input {
+  padding-right: 48px;
+}
+
+.AuthExperience-module__zcwgwq__field input:focus, .AuthExperience-module__zcwgwq__field select:focus {
+  outline: 2px solid var(--auth-accent);
+  outline-offset: 2px;
+  border-color: var(--auth-accent);
+}
+
+.AuthExperience-module__zcwgwq__field [aria-invalid="true"] {
+  border-color: #c83c42;
+}
+
+.AuthExperience-module__zcwgwq__reveal {
+  width: 44px;
+  height: 44px;
+  color: var(--subtle);
+  cursor: pointer;
+  place-items: center;
+  display: grid;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+}
+
+.AuthExperience-module__zcwgwq__reveal:hover {
+  color: var(--chrome-accent);
+}
+
+.AuthExperience-module__zcwgwq__pair {
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  display: grid;
+}
+
+.AuthExperience-module__zcwgwq__formOptions {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 20px;
+  font-size: 12px;
+  display: flex;
+}
+
+.AuthExperience-module__zcwgwq__checkbox {
+  cursor: pointer;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  display: flex;
+}
+
+.AuthExperience-module__zcwgwq__checkbox input, .AuthExperience-module__zcwgwq__terms input {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--auth-accent);
+  flex-shrink: 0;
+}
+
+.AuthExperience-module__zcwgwq__textLink {
+  color: var(--chrome-accent);
+  cursor: pointer;
+  min-height: 44px;
+  font-weight: 600;
+}
+
+.AuthExperience-module__zcwgwq__textLink:hover, .AuthExperience-module__zcwgwq__switchPage a:hover {
+  text-underline-offset: 4px;
+  text-decoration: underline;
+}
+
+.AuthExperience-module__zcwgwq__submit {
+  background: var(--auth-accent);
+  color: #fff;
+  cursor: pointer;
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 50px;
+  font-size: 14px;
+  font-weight: 650;
+  transition: background .15s, box-shadow .15s;
+  display: flex;
+}
+
+.AuthExperience-module__zcwgwq__submit:hover {
+  background: #084f95;
+  box-shadow: 0 6px 18px #0a66c230;
+}
+
+.AuthExperience-module__zcwgwq__submit:disabled {
+  cursor: wait;
+  opacity: .7;
+}
+
+.AuthExperience-module__zcwgwq__spinner {
+  animation: .8s linear infinite AuthExperience-module__zcwgwq__spin;
+}
+
+.AuthExperience-module__zcwgwq__feedback {
+  color: var(--subtle);
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12px;
+  line-height: 1.65;
+  display: flex;
+}
+
+.AuthExperience-module__zcwgwq__feedback:not(:empty) {
+  padding: 14px 0;
+}
+
+.AuthExperience-module__zcwgwq__feedback svg {
+  color: var(--chrome-accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.AuthExperience-module__zcwgwq__switchPage {
+  border-top: 1px solid var(--line);
+  color: var(--subtle);
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-top: 24px;
+  padding-top: 24px;
+  font-size: 12px;
+  display: flex;
+}
+
+.AuthExperience-module__zcwgwq__switchPage a {
+  color: var(--chrome-accent);
+  align-items: center;
+  gap: 5px;
+  min-height: 44px;
+  font-weight: 650;
+  display: inline-flex;
+}
+
+.AuthExperience-module__zcwgwq__accountTypes {
+  min-width: 0;
+  margin: 0 0 20px;
+  padding: 0;
+}
+
+.AuthExperience-module__zcwgwq__accountTypes > div {
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  display: grid;
+}
+
+.AuthExperience-module__zcwgwq__accountTypes label {
+  cursor: pointer;
+  position: relative;
+}
+
+.AuthExperience-module__zcwgwq__accountTypes input {
+  opacity: 0;
+  position: absolute;
+}
+
+.AuthExperience-module__zcwgwq__accountTypes span {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 8px;
+  font-size: 12px;
+  display: flex;
+}
+
+.AuthExperience-module__zcwgwq__accountTypes input:checked + span {
+  background: var(--hover-surface);
+  color: var(--chrome-accent);
+  border-color: var(--chrome-accent);
+}
+
+.AuthExperience-module__zcwgwq__accountTypes input:focus-visible + span {
+  outline: 2px solid var(--auth-accent);
+  outline-offset: 3px;
+}
+
+.AuthExperience-module__zcwgwq__businessFields {
+  border-left: 2px solid var(--auth-accent);
+  margin-bottom: 8px;
+  padding-left: 16px;
+}
+
+.AuthExperience-module__zcwgwq__terms {
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+
+.AuthExperience-module__zcwgwq__terms > div {
+  align-items: center;
+  gap: 8px;
+  display: flex;
+}
+
+.AuthExperience-module__zcwgwq__terms label {
+  cursor: pointer;
+  line-height: 1.6;
+}
+
+.AuthExperience-module__zcwgwq__termsLink {
+  color: var(--chrome-accent);
+  cursor: pointer;
+  place-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  margin-left: auto;
+  display: grid;
+}
+
+.AuthExperience-module__zcwgwq__error {
+  color: #b42330;
+  margin-top: 6px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+[data-theme="dark"] .AuthExperience-module__zcwgwq__error {
+  color: #ffadb4;
+}
+
+.AuthExperience-module__zcwgwq__visual {
+  color: #fff;
+  background: #36556a;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  padding: 42px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.AuthExperience-module__zcwgwq__photo, .AuthExperience-module__zcwgwq__tint {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+}
+
+.AuthExperience-module__zcwgwq__photo {
+  animation: 24s ease-in-out infinite alternate AuthExperience-module__zcwgwq__skyline-drift;
+}
+
+.AuthExperience-module__zcwgwq__photo img {
+  object-fit: cover;
+  filter: grayscale();
+  object-position: 48% center;
+}
+
+.AuthExperience-module__zcwgwq__tint {
+  background: linear-gradient(170deg, #0a66c21a 5%, #0a66c247 45%, #072b4ce0 100%);
+}
+
+.AuthExperience-module__zcwgwq__visualTop, .AuthExperience-module__zcwgwq__visualCopy {
+  z-index: 1;
+  position: relative;
+}
+
+.AuthExperience-module__zcwgwq__visualTop {
+  font-family: var(--font-brand);
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+}
+
+.AuthExperience-module__zcwgwq__visualCopy {
+  padding-top: 100px;
+}
+
+.AuthExperience-module__zcwgwq__visualCopy > p {
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.AuthExperience-module__zcwgwq__visualCopy blockquote {
+  text-wrap: balance;
+  margin: 22px 0 28px;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.AuthExperience-module__zcwgwq__visualCopy blockquote span {
+  color: #b9ddff;
+}
+
+.AuthExperience-module__zcwgwq__visualRule {
+  background: #ffffff80;
+  width: 56px;
+  height: 1px;
+  margin-bottom: 20px;
+}
+
+.AuthExperience-module__zcwgwq__page :is(a, button, input):focus-visible {
+  outline: 2px solid var(--auth-accent);
+  outline-offset: 3px;
+}
+
+@keyframes AuthExperience-module__zcwgwq__skyline-drift {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.06);
+  }
+}
+
+@keyframes AuthExperience-module__zcwgwq__spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 1600px) {
+  .AuthExperience-module__zcwgwq__visual {
+    padding: 56px;
+  }
+
+  .AuthExperience-module__zcwgwq__visualCopy blockquote {
+    font-size: 44px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1099px) {
+  .AuthExperience-module__zcwgwq__formSide {
+    padding: 36px 28px;
+  }
+
+  .AuthExperience-module__zcwgwq__visual {
+    padding: 28px;
+  }
+
+  .AuthExperience-module__zcwgwq__visualCopy blockquote {
+    font-size: 28px;
+  }
+
+  .AuthExperience-module__zcwgwq__pair {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .AuthExperience-module__zcwgwq__page {
+    grid-template-columns: 1fr;
+  }
+
+  .AuthExperience-module__zcwgwq__visual {
+    grid-row: 1;
+    min-height: 220px;
+    padding: 24px;
+  }
+
+  .AuthExperience-module__zcwgwq__visualTop {
+    display: none;
+  }
+
+  .AuthExperience-module__zcwgwq__visualCopy {
+    padding: 0;
+  }
+
+  .AuthExperience-module__zcwgwq__visualCopy blockquote {
+    max-width: 380px;
+    margin: 12px 0 0;
+    font-size: 25px;
+    line-height: 1.25;
+  }
+
+  .AuthExperience-module__zcwgwq__visualCopy blockquote br {
+    display: none;
+  }
+
+  .AuthExperience-module__zcwgwq__visualCopy blockquote {
+    white-space: normal;
+  }
+
+  .AuthExperience-module__zcwgwq__visualCopy > p:last-child, .AuthExperience-module__zcwgwq__visualRule {
+    display: none;
+  }
+
+  .AuthExperience-module__zcwgwq__tint {
+    background: linear-gradient(100deg, #073c6bd9, #0a66c24d);
+  }
+
+  .AuthExperience-module__zcwgwq__photo img {
+    object-position: center 42%;
+  }
+
+  .AuthExperience-module__zcwgwq__formSide {
+    padding: 32px 24px 40px;
+  }
+
+  .AuthExperience-module__zcwgwq__wordmark {
+    display: none;
+  }
+
+  .AuthExperience-module__zcwgwq__heading {
+    margin: 0 0 24px;
+  }
+
+  .AuthExperience-module__zcwgwq__heading h1 {
+    font-size: 27px;
+  }
+
+  .AuthExperience-module__zcwgwq__field input, .AuthExperience-module__zcwgwq__field select {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 479px) {
+  .AuthExperience-module__zcwgwq__pair {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .AuthExperience-module__zcwgwq__formSide {
+    padding-inline: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .AuthExperience-module__zcwgwq__photo, .AuthExperience-module__zcwgwq__spinner {
+    animation: none;
+  }
+
+  .AuthExperience-module__zcwgwq__page *, .AuthExperience-module__zcwgwq__page :before {
+    transition: none;
+  }
+}
+
+/*# sourceMappingURL=apps_web_src_components_AuthExperience_module_1ut13h7.css.map*/

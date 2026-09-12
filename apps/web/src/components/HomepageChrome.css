@@ -39,9 +39,13 @@ html { scroll-padding-top: calc(var(--navbar-height) + 160px); }
 .navbar-category-menu a { white-space: normal; }
 .navbar-category-menu svg { flex-shrink: 0; color: var(--chrome-accent); }
 .account-bar { position: relative; display: flex; align-items: center; gap: 6px; }
-.account-language { display: flex; gap: 4px; align-items: center; min-height: 44px; font-size: 12px; }
-.account-language select { max-width: 44px; min-height: 44px; background: transparent; cursor: pointer; }
-.account-language option { background: var(--panel-bg); }
+.account-language { display: flex; gap: 10px; align-items: center; min-height: 44px; padding: 4px 10px; font-size: 13px; }
+.account-language-options { display: flex; margin-left: auto; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.account-language-options button { min-width: 40px; min-height: 36px; cursor: pointer; }
+.account-language-options button[aria-pressed="true"] { background: #0a66c2; color: white; }
+.account-menu > a { display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 10px; border-radius: 6px; font-size: 13px; }
+.account-menu > a:hover { background: var(--hover-surface); }
+.account-divider { border: 0; border-top: 1px solid var(--line); margin: 6px 0; }
 .account-login { min-height: 38px; padding: 8px 18px; border-radius: 999px; background: #0a66c2; color: white; font-size: 13px; font-weight: 600; cursor: pointer; }
 .account-login:hover { background: #084f95; }
 .chrome-icon { display: inline-flex; justify-content: center; align-items: center; flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; }
@@ -72,8 +76,6 @@ html { scroll-padding-top: calc(var(--navbar-height) + 160px); }
   .navbar-brand { gap: 4px; font-size: 12px; }
   .navbar-brand img { width: 22px; height: 22px; }
   .account-bar { gap: 2px; }
-  .account-language { gap: 0; }
-  .account-language svg { width: 14px; }
   .account-login { padding: 8px 10px; font-size: 12px; }
   .chrome-icon { width: 34px; height: 38px; }
   .account-avatar { width: 34px; height: 34px; }

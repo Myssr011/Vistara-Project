@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///workspaces/Vistara-Project/apps/web/src/app/template.tsx"],"sourcesContent":["export default function Template({ children }: { children: React.ReactNode }) {\n  return <div className=\"route-transition\">{children}</div>;\n}"],"names":["Template","children","className"],"mappings":";;;;;;AAAe,SAASA,SAAS,EAAEC,QAAQ,EAAiC;IAC1E,qBAAO,0dAAC;QAAIC,WAAU;kBAAoBD;;;;;;AAC5C"}}]
+}

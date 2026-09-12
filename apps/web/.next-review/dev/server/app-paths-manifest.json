@@ -1,0 +1,7 @@
+{
+  "/about/page": "app/about/page.js",
+  "/cari/page": "app/cari/page.js",
+  "/daftar/page": "app/daftar/page.js",
+  "/masuk/page": "app/masuk/page.js",
+  "/page": "app/page.js"
+}

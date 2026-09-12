@@ -20,6 +20,13 @@ body {
   font-family: var(--font-sans);
 }
 
+.route-transition { display: flex; flex-direction: column; flex: 1; min-width: 0; animation: route-enter 220ms ease-out both; }
+@keyframes route-enter { from { opacity: .6; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  .route-transition { animation: none; }
+  #nprogress .bar, #nprogress .peg { transition: none !important; }
+}
+
 /* Baris kategori digeser horizontal di mobile, scrollbar-nya disembunyikan. */
 @utility no-scrollbar {
   scrollbar-width: none;
