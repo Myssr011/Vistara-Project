@@ -164,13 +164,13 @@ test("auth stays responsive with loaded imagery and reduced motion", async ({ pa
     await page.setViewportSize({ width, height: 900 });
     for (const path of ["/masuk", "/daftar"]) {
       await openPage(page, path);
-      await expect(page.locator("blockquote")).toHaveText("Satu Platform, Semua Kebutuhan Kreatif & Properti Anda");
+      await expect(page.getByRole("complementary").getByRole("heading")).toHaveText("Vistara Media Indonesia");
       if (path === "/daftar") await page.getByRole("radio", { name: "Mitra/Partner" }).check();
       await expect.poll(() => page.locator("main img").evaluateAll(images => images.every(image => image instanceof HTMLImageElement && image.complete && image.naturalWidth > 0))).toBe(true);
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
       const visual = await page.getByRole("complementary").boundingBox();
       const form = await page.getByRole("form").boundingBox();
-      if (width < 768) expect(visual!.y + visual!.height).toBeLessThan(form!.y);
+      if (width < 768) expect(form!.y + form!.height).toBeLessThan(visual!.y);
       else expect(form!.x + form!.width).toBeLessThan(visual!.x);
       expect(await page.locator("main img").evaluate(image => getComputedStyle(image.parentElement!).animationName)).toBe("none");
       if (width === 375) await screenshot(page, path === "/masuk" ? "masuk-mobile" : "daftar-mitra-mobile");
@@ -178,3 +178,49 @@ test("auth stays responsive with loaded imagery and reduced motion", async ({ pa
   }
   expect(errors).toEqual([]);
 });
+
+for (const width of [375, 1440]) {
+  test(`public pages stay responsive at ${width}px`, async ({ page }) => {
+    test.setTimeout(360_000);
+    await page.setViewportSize({ width, height: 900 });
+    await page.emulateMedia({ reducedMotion: "reduce" });
+    const errors: string[] = [];
+    const detailPaths = new Set<string>();
+    page.on("pageerror", error => errors.push(error.message));
+    const paths = ["/", "/about", "/kontak", "/portofolio", "/aset", "/bidang", "/content-creator", "/hotel", "/apartemen", "/cafe-restoran", "/cari?q=hotel", "/bidang/pemasaran-properti", "/bidang/content-creator-management", "/bidang/affiliate-marketing", "/bidang/konten-kuliner"];
+    for (const path of paths) {
+      await openPage(page, path);
+      await expect(page.locator("main h1")).toHaveCount(1);
+      await expect(page.getByRole("contentinfo")).toHaveCount(1);
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), path).toBe(true);
+      const links = await page.locator("main a[href]").evaluateAll(anchors => anchors.map(anchor => anchor.getAttribute("href")!));
+      for (const prefix of ["/hotel/", "/apartemen/", "/cafe-restoran/", "/content-creator/", "/artikel/", "/insight/"]) {
+        const detail = links.find(href => href.startsWith(prefix));
+        if (detail && ![...detailPaths].some(href => href.startsWith(prefix))) detailPaths.add(detail);
+      }
+      await screenshot(page, `anti-slop-${width}-${path.replace(/[^a-z0-9]+/gi, "-") || "home"}`);
+    }
+    for (const path of detailPaths) {
+      await openPage(page, path);
+      await expect(page.locator("main h1")).toHaveCount(1);
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), path).toBe(true);
+      await screenshot(page, `anti-slop-${width}-detail-${path.split("/")[1]}`);
+    }
+    expect(errors).toEqual([]);
+  });
+
+  test(`dashboard pages stay responsive at ${width}px`, async ({ page }) => {
+    const dashboardURL = process.env.PLAYWRIGHT_DASHBOARD_URL ?? "http://localhost:5173";
+    await page.setViewportSize({ width, height: 900 });
+    const errors: string[] = [];
+    page.on("pageerror", error => errors.push(error.message));
+    for (const path of ["/", "/login", "/register", "/listings", "/listings/new", "/listings/review", "/bookings", "/admin/categories", "/admin/listings", "/admin/partners"]) {
+      await openPage(page, `${dashboardURL}${path}`);
+      await expect(page.locator("main h1")).toHaveCount(1);
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), path).toBe(true);
+      if (path === "/login" || path === "/register") await expect(page.locator("main button")).toBeDisabled();
+      await screenshot(page, `anti-slop-dashboard-${width}-${path.replace(/[^a-z0-9]+/gi, "-") || "home"}`);
+    }
+    expect(errors).toEqual([]);
+  });
+}

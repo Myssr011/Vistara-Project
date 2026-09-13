@@ -20,7 +20,7 @@ export default function CreatorMarquee({ creators }: { creators: CreatorMarqueeD
   return <section className={styles.section} aria-labelledby="creator-marquee-title">
     <div className={styles.inner}>
       <header className={styles.heading}>
-        <div><h2 id="creator-marquee-title">Content Creator Vistara</h2><p>Kreator yang berkolaborasi bersama kami</p></div>
+        <div><h2 id="creator-marquee-title">Content Creator Vistara</h2><p>Perjalanan, kuliner, properti, dan fashion</p></div>
         <button type="button" className={styles.pause} aria-label={paused ? "Lanjutkan animasi kreator" : "Jeda animasi kreator"} title={paused ? "Lanjutkan animasi kreator" : "Jeda animasi kreator"} aria-controls="creator-marquee-track" onClick={() => setPaused(value => !value)}>{paused ? <Play size={18} aria-hidden="true" /> : <Pause size={18} aria-hidden="true" />}</button>
       </header>
       <div className={styles.viewport}>

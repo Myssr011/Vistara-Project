@@ -15,7 +15,7 @@ export async function generateMetadata({
 
   return {
     title: `${def.nama} — ${SITE_NAME}`,
-    description: `Cari dan bandingkan ${def.nama.toLowerCase()} terbaik di Vistara.`,
+    description: `Bandingkan lokasi dan harga awal ${def.nama.toLowerCase()} dari mitra Vistara.`,
     alternates: { canonical: `/${def.slug}` },
   };
 }
@@ -25,5 +25,5 @@ export default async function CategoryPage({ params, searchParams }: PageProps<"
   const def = await prisma.category.findUnique({ where: { slug: category } });
   if (!def || def.status !== "ACTIVE") notFound();
 
-  return <ListingDirectory title={def.nama} description={`Temukan pilihan ${def.nama.toLowerCase()} dari mitra Vistara. Telusuri lokasi, lihat suasananya, dan bandingkan harga awal sebelum merencanakan kunjungan.`} path={`/${def.slug}`} categorySlug={def.slug} query={await searchParams} />;
+  return <ListingDirectory title={def.nama} description={`Lokasi, foto, dan harga awal ${def.nama.toLowerCase()} dari mitra Vistara.`} path={`/${def.slug}`} categorySlug={def.slug} query={await searchParams} />;
 }

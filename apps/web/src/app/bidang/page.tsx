@@ -8,9 +8,9 @@ import { ExplorePage, PageIntro, EmptyCollection } from "@/components/explore/Ex
 export const dynamic = "force-dynamic";
 export const metadata: Metadata = { title: "Bidang", description: "Jelajahi bidang layanan Vistara: hotel, apartemen, cafe dan restoran, serta inspirasi editorial.", alternates: { canonical: "/bidang" } };
 const categoriesInfo: Record<string, { icon: LucideIcon; description: string; label: string }> = {
-  hotel: { icon: BedDouble, label: "SINGGAH & ISTIRAHAT", description: "Pilihan tempat beristirahat untuk perjalanan bisnis, akhir pekan, atau waktu bersama keluarga." },
-  apartemen: { icon: Building2, label: "RUANG UNTUK TINGGAL", description: "Temukan ruang dengan lokasi dan harga awal yang sesuai dengan rencana tinggal Anda." },
-  "cafe-restoran": { icon: Coffee, label: "RASA & PERTEMUAN", description: "Dari kopi pagi hingga makan bersama. Kenali tempat kuliner dan suasana yang ingin Anda datangi." },
+  hotel: { icon: BedDouble, label: "Penginapan", description: "Hotel untuk perjalanan bisnis, akhir pekan, atau liburan keluarga." },
+  apartemen: { icon: Building2, label: "Hunian", description: "Apartemen berdasarkan lokasi dan harga awal." },
+  "cafe-restoran": { icon: Coffee, label: "Kuliner", description: "Cafe dan restoran untuk minum kopi, makan, atau bertemu." },
 };
 
 export default async function FieldsPage() {
@@ -20,7 +20,7 @@ export default async function FieldsPage() {
     listings: { where: { status: "PUBLISHED", images: { some: {} } }, orderBy: { slug: "asc" }, take: 1, select: { images: { orderBy: { urutan: "asc" }, take: 1, select: { url: true } } } },
   } });
   return <ExplorePage>
-    <PageIntro label="Bidang" title="Pilihan untuk setiap kebutuhan." description="Kenali bidang layanan Vistara. Mulai dari tempat tinggal, persinggahan, hingga meja favorit untuk bertemu dan berbagi cerita."><span className="explore-count"><Compass size={20} aria-hidden="true" />{categories.length} bidang aktif</span></PageIntro>
+    <PageIntro label="Bidang" title="Hotel, apartemen, cafe & restoran" description="Properti dan tempat kuliner dari mitra Vistara."><span className="explore-count"><Compass size={20} aria-hidden="true" />{categories.length} bidang aktif</span></PageIntro>
     <section className="explore-wrap fields-list" aria-label="Bidang layanan aktif">
       {categories.length ? categories.map(category => {
         const info = categoriesInfo[category.slug]; const Icon = info?.icon ?? Compass; const image = category.listings[0]?.images[0]?.url;
@@ -30,6 +30,6 @@ export default async function FieldsPage() {
         </article>;
       }) : <EmptyCollection resetHref="/bidang" title="Belum ada bidang aktif." />}
     </section>
-    <section className="explore-wrap explore-section"><div className="explore-crosslink"><div><p className="explore-eyebrow">PERSPEKTIF LAIN</p><h2>Kenali ceritanya sebelum berkunjung.</h2><p>Ide perjalanan, tips, dan kabar terbaru dalam koleksi editorial Vistara.</p></div><Link href="/content-creator" className="explore-text-link">Kunjungi Content Creator<ArrowUpRight size={19} aria-hidden="true" /></Link></div></section>
+    <section className="explore-wrap explore-section"><div className="explore-crosslink"><div><h2>Kreator untuk brand Anda</h2><p>Profil kreator di bidang perjalanan, kuliner, properti, dan fashion.</p></div><Link href="/content-creator" className="explore-text-link">Lihat kreator<ArrowUpRight size={19} aria-hidden="true" /></Link></div></section>
   </ExplorePage>;
 }

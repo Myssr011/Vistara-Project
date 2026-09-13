@@ -12,6 +12,15 @@
 
   --font-sans: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
   --font-brand: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-xl: 0.5rem;
+  --radius-2xl: 0.5rem;
+  --radius-3xl: 0.5rem;
+  --tracking-tight: 0;
+  --tracking-tighter: 0;
+  --tracking-wide: 0;
+  --tracking-wider: 0;
+  --tracking-widest: 0;
 }
 
 body {
@@ -19,6 +28,19 @@ body {
   color: #171717;
   font-family: var(--font-sans);
 }
+
+:is(h1, h2, h3, p, a, button, label) { overflow-wrap: anywhere; }
+:is(button, a, input, select, textarea, summary):focus-visible { outline: 2px solid var(--chrome-accent, #0a66c2); outline-offset: 3px; }
+
+.detail-page .text-primary-deep { color: var(--ink); }
+.detail-page :is(.text-muted, .text-neutral-700) { color: var(--subtle); }
+.detail-page .text-primary { color: var(--chrome-accent); }
+.detail-page p { line-height: 1.8; }
+.search-page .listing-section { background: var(--page-bg); }
+.search-page :is(.text-primary-deep, .listing-card) { color: var(--ink); }
+.search-page .text-muted { color: var(--subtle); }
+.search-page .listing-card { background: var(--panel-bg); border: 1px solid var(--line); box-shadow: none; }
+.search-page .listing-card .text-primary { color: var(--chrome-accent); }
 
 .route-transition { display: flex; flex-direction: column; flex: 1; min-width: 0; animation: route-enter 220ms ease-out both; }
 @keyframes route-enter { from { opacity: .6; } to { opacity: 1; } }

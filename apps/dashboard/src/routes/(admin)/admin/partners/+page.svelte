@@ -1,4 +1,4 @@
-<h1>Mitra Terdaftar</h1>
+<h1>Mitra terdaftar</h1>
 
 <!-- TODO: daftar Partner + status verifikasi. -->
-<p>Belum ada mitra.</p>
+<p class="dashboard-status">Data mitra belum tersedia. Verifikasi mitra masih dalam pengembangan.</p>

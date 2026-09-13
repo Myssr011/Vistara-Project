@@ -47,7 +47,7 @@ export default async function ListingDetailPage({
   const isTempat = getFilterType(listing.category.slug) === "tempat";
 
   return (
-    <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-8">
+    <main id="main-content" className="detail-page mx-auto w-full max-w-5xl flex-1 px-4 py-8">
       <p className="text-sm text-muted">{listing.category.nama}</p>
       <h1 className="mt-1 text-2xl font-bold text-primary-deep">{listing.judul}</h1>
       <p className="mt-1 text-sm text-muted">{listing.lokasi}</p>
@@ -90,15 +90,16 @@ export default async function ListingDetailPage({
           <section>
             <h2 className="text-lg font-semibold text-primary-deep">Fasilitas</h2>
             {/* TODO: model fasilitas belum ada di skema. */}
-            <p className="mt-2 text-sm text-muted">—</p>
+            <p className="mt-2 text-sm text-muted">Informasi fasilitas belum tersedia.</p>
           </section>
         </div>
 
-        <aside className="h-fit rounded-2xl bg-white p-4 shadow-sm ring-1 ring-black/5">
+        <aside className="booking-panel h-fit rounded-lg border border-[var(--line)] bg-[var(--panel-bg)] p-5">
           <p className="text-sm text-muted">Mulai dari</p>
           <p className="text-xl font-bold text-primary">
             Rp{Number(listing.harga).toLocaleString("id-ID")}
           </p>
+          <p className="mt-2 text-sm text-muted">Konfirmasikan satuan harga dan ketersediaan kepada mitra.</p>
           <BookingForm listingSlug={listing.slug} />
         </aside>
       </div>

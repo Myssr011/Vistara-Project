@@ -39,7 +39,7 @@ function LoginForm() {
   async function submit() {
     setNotice("");
     await new Promise(resolve => setTimeout(resolve, 650));
-    setNotice("Validasi berhasil. Ini pratinjau; sesi masuk belum dibuat dan pilihan Ingat saya belum disimpan.");
+    setNotice("Validasi berhasil. Ini masih pratinjau: sesi masuk belum dibuat dan pilihan Ingat saya belum disimpan.");
   }
   return <motion.form noValidate onSubmit={handleSubmit(submit)} initial="hidden" animate="visible" variants={formMotion} aria-label="Form masuk" aria-busy={isSubmitting}>
     <fieldset disabled={isSubmitting} className={styles.fields}>
@@ -47,7 +47,7 @@ function LoginForm() {
       <Field id="password" label="Password" type="password" autoComplete="current-password" placeholder="Minimal 8 karakter" {...register("password")} error={errors.password?.message} />
       <motion.div className={styles.formOptions} variants={fieldMotion}>
         <label className={styles.checkbox}><input type="checkbox" {...register("remember")} />Ingat saya</label>
-        <button type="button" className={styles.textLink} onClick={() => setNotice("Pemulihan password belum tersedia karena autentikasi belum terhubung.")}>Lupa password?</button>
+        <button type="button" className={styles.textLink} onClick={() => setNotice("Pemulihan password belum tersedia.")}>Lupa password?</button>
       </motion.div>
       <SubmitButton pending={isSubmitting}>Masuk</SubmitButton>
     </fieldset>
@@ -66,7 +66,7 @@ function RegistrationForm() {
   async function submit() {
     setNotice("");
     await new Promise(resolve => setTimeout(resolve, 650));
-    setNotice("Validasi berhasil. Ini pratinjau; akun belum dibuat dan data belum dikirim ke server.");
+    setNotice("Validasi berhasil. Ini masih pratinjau: akun belum dibuat dan data belum dikirim.");
   }
   return <motion.form noValidate onSubmit={handleSubmit(submit)} initial="hidden" animate="visible" variants={formMotion} aria-label="Form daftar" aria-busy={isSubmitting}>
     <fieldset disabled={isSubmitting} className={styles.fields}>
@@ -107,7 +107,7 @@ export default function AuthExperience({ mode }: { mode: "login" | "register" })
     <section className={styles.formSide} aria-labelledby="auth-title">
       <motion.div className={styles.formInner} initial={{ opacity: 0, x: reducedMotion ? 0 : signup ? 24 : -24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: .3, ease: "easeOut" }}>
         <Link href="/" className={styles.wordmark}>VISTARA<span>MEDIA INDONESIA</span></Link>
-        <header className={styles.heading}><p>{signup ? "AWALI CERITA ANDA" : "KEMBALI TERHUBUNG"}</p><h1 id="auth-title">{signup ? "Buat akun Vistara" : "Selamat datang kembali."}</h1><p>{signup ? "Ruang baru untuk kebutuhan dan kolaborasi Anda." : "Masuk untuk melanjutkan langkah Anda bersama Vistara."}</p></header>
+        <header className={styles.heading}><h1 id="auth-title">{signup ? "Buat akun Vistara" : "Masuk ke Vistara"}</h1><p>{signup ? "Pendaftaran belum tersedia. Formulir ini masih berupa pratinjau." : "Login belum tersedia. Formulir ini masih berupa pratinjau."}</p></header>
         {signup ? <RegistrationForm /> : <LoginForm />}
         <p className={styles.switchPage}>{signup ? "Sudah punya akun?" : "Belum punya akun?"} <Link href={signup ? "/masuk" : "/daftar"}>{signup ? "Masuk di sini" : "Daftar di sini"}<ArrowRight size={15} aria-hidden="true" /></Link></p>
       </motion.div>
@@ -115,8 +115,7 @@ export default function AuthExperience({ mode }: { mode: "login" | "register" })
     <aside className={styles.visual} aria-label="Vistara: kreatif dan properti">
       <div className={styles.photo}><Image src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=85&auto=format&fit=crop" alt="Arsitektur gedung kaca menjulang ke langit" fill priority sizes="(max-width: 767px) 100vw, 40vw" /></div>
       <div className={styles.tint} />
-      <div className={styles.visualTop}><span>VISTARA</span><ArrowUpRight size={26} aria-hidden="true" /></div>
-      <div className={styles.visualCopy}><p>CREATE. CONNECT. GROW.</p><blockquote>Satu Platform, <br />Semua Kebutuhan <br /><span>Kreatif &amp; Properti</span> <br />Anda</blockquote><div className={styles.visualRule} /><p>Temukan ruang. Bangun koneksi. Ciptakan cerita.</p></div>
+      <div className={styles.visualCopy}><h2>Vistara Media Indonesia</h2><p>Pemasaran properti dan produksi konten.</p></div>
     </aside>
   </main></MotionConfig>;
 }

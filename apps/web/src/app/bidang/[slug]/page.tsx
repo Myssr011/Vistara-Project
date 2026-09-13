@@ -62,9 +62,9 @@ async function BidangShowcase({ bidang }: { bidang: BidangConfig }) {
   }
 
   return <>
-    <p className={styles.statsNotice}>Simulasi program: angka berikut adalah data dummy, bukan capaian Vistara atau jaminan hasil.</p>
+    <p className={styles.statsNotice}>Ketentuan program disepakati bersama brand dan mitra afiliasi.</p>
     <dl className={styles.stats}>{bidang.stats.map(stat => <div key={stat.label}><dt>{stat.label}</dt><dd>{stat.nilai}</dd></div>)}</dl>
-    <p className={styles.note}>M = miliar rupiah. Target, periode pengukuran, dan skema komisi ditentukan sesuai kesepakatan program.</p>
+    <p className={styles.note}>Hasil setiap program bergantung pada produk, audiens, dan pelaksanaannya.</p>
   </>;
 }
 
@@ -89,7 +89,7 @@ export default async function BidangPage({ params }: BidangPageProps) {
     </header>
 
     <section className={`${styles.wrap} ${styles.description}`} aria-labelledby="bidang-description-title">
-      <div><span className={styles.badge}>{bidang.nama}</span><h2 id="bidang-description-title">Cerita yang Menghubungkan</h2><p>{bidang.deskripsi}</p></div>
+      <div><h2 id="bidang-description-title">Tentang layanan</h2><p>{bidang.deskripsi}</p></div>
       <div className={styles.supportingPhoto}><Image src={bidang.supportingImage} alt={bidang.supportingAlt} fill sizes="(max-width: 767px) 100vw, 50vw" /></div>
     </section>
 
@@ -104,8 +104,8 @@ export default async function BidangPage({ params }: BidangPageProps) {
     </section>
 
     <section className={styles.closing} aria-labelledby="bidang-cta-title"><div className={`${styles.wrap} ${styles.closingInner}`}>
-      <div><p className={styles.eyebrow}>CREATE. CONNECT. GROW.</p><h2 id="bidang-cta-title">Tertarik Berkolaborasi di Bidang {bidang.nama}?</h2></div>
-      <Link href="/kontak" className={styles.cta}><MessageCircle size={19} aria-hidden="true" />Hubungi Kami<ArrowUpRight size={18} aria-hidden="true" /></Link>
+      <div><h2 id="bidang-cta-title">Kerja sama {bidang.nama}</h2></div>
+      <Link href="/kontak" className={styles.cta}><MessageCircle size={19} aria-hidden="true" />Informasi kontak<ArrowUpRight size={18} aria-hidden="true" /></Link>
     </div></section>
   </main>;
 }

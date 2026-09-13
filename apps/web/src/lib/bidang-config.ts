@@ -22,11 +22,11 @@ export type BidangConfig = BidangBase & (
 export const bidangConfig = {
   "pemasaran-properti": {
     nama: "Pemasaran Properti",
-    tagline: "Menghadirkan hotel & apartemen ke audiens yang tepat melalui konten yang menjual",
+    tagline: "Foto, video, dan pengelolaan listing untuk hotel dan apartemen.",
     heroImage: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&q=85&auto=format&fit=crop",
     heroAlt: "Arsitektur hotel dan area kolam renang",
     accentColor: "blue",
-    deskripsi: "Setiap properti memiliki cerita, mulai dari suasana kamar hingga pengalaman di sekitarnya. Vistara Media Indonesia membantu hotel dan apartemen menyampaikan cerita itu melalui strategi konten yang relevan, foto profesional, dan video tur virtual. Kami menghubungkan keunggulan properti dengan kebutuhan calon tamu, menata informasi listing, serta merancang kolaborasi kreator yang sesuai dengan karakter brand.",
+    deskripsi: "Vistara memproduksi foto dan video tur untuk hotel dan apartemen, menata informasi listing, serta merencanakan konten bersama pengelola properti. Kolaborasi dengan kreator disesuaikan dengan karakter properti dan kebutuhan calon tamu.",
     supportingImage: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1000&q=85&auto=format&fit=crop",
     supportingAlt: "Interior apartemen terang dengan ruang duduk dan area makan",
     layananList: [
@@ -41,11 +41,11 @@ export const bidangConfig = {
   },
   "content-creator-management": {
     nama: "Content Creator Management",
-    tagline: "Menghubungkan brand dengan kreator yang tepat untuk cerita yang autentik",
+    tagline: "Kurasi kreator, brief konten, dan pengelolaan kerja sama dengan brand.",
     heroImage: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1920&q=85&auto=format&fit=crop",
     heroAlt: "Timeline penyuntingan video dalam proses produksi konten",
     accentColor: "purple",
-    deskripsi: "Kolaborasi yang bermakna dimulai dari kecocokan antara brand, kreator, dan audiensnya. Vistara mendampingi proses tersebut melalui kurasi kreator, penyusunan brief, negosiasi kerja sama, serta pengawasan produksi konten. Kreator tetap memiliki ruang untuk bercerita dengan gayanya sendiri, sementara brand memperoleh alur kerja yang jelas dan laporan performa campaign sesuai tujuan yang disepakati.",
+    deskripsi: "Vistara memilih kreator sesuai kebutuhan brand, menyusun brief, mengatur kontrak, dan mengawasi produksi konten. Kreator mempertahankan gaya bercerita mereka. Brand menerima laporan hasil campaign berdasarkan tujuan yang disepakati.",
     supportingImage: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1000&q=85&auto=format&fit=crop",
     supportingAlt: "Tim kreatif berdiskusi dan menyusun rencana kolaborasi",
     layananList: [
@@ -59,11 +59,11 @@ export const bidangConfig = {
   },
   "affiliate-marketing": {
     nama: "Affiliate Marketing",
-    tagline: "Perluas jangkauan penjualan lewat jaringan afiliasi yang terukur",
+    tagline: "Perencanaan program afiliasi, pelacakan penjualan, dan skema komisi.",
     heroImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&q=85&auto=format&fit=crop",
     heroAlt: "Tim pemasaran meninjau strategi bersama",
     accentColor: "teal",
-    deskripsi: "Vistara membantu brand merancang program afiliasi dengan tujuan, atribusi, dan skema komisi yang transparan. Mulai dari memilih jaringan yang relevan hingga meninjau hasil campaign, setiap tahap diarahkan agar kontribusi mitra dapat dipahami dan dievaluasi. Integrasi pelacakan, jadwal laporan, serta ketentuan pembayaran ditentukan bersama sebelum program berjalan, tanpa menjanjikan tingkat konversi tertentu.",
+    deskripsi: "Vistara membantu brand memilih mitra afiliasi, menetapkan cara mencatat penjualan, dan menyusun skema komisi. Brand dan mitra menyepakati pelacakan, jadwal laporan, serta ketentuan pembayaran sebelum program berjalan. Hasil penjualan tidak dijamin.",
     supportingImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1000&q=85&auto=format&fit=crop",
     supportingAlt: "Laptop menampilkan laporan dan analitik pemasaran",
     layananList: [
@@ -75,18 +75,18 @@ export const bidangConfig = {
     showcaseTitle: "Gambaran Program Afiliasi",
     showcaseType: "stats",
     stats: [
-      { nilai: "150+", label: "Mitra afiliasi aktif" },
-      { nilai: "35%", label: "Rata-rata peningkatan konversi" },
-      { nilai: "Rp2,5 M+", label: "Komisi tersalurkan" },
+      { nilai: "Disepakati sebelum program berjalan", label: "Skema komisi" },
+      { nilai: "Mengikuti tujuan campaign", label: "Pelacakan penjualan" },
+      { nilai: "Sesuai jadwal bersama", label: "Laporan dan pembayaran" },
     ],
   },
   "konten-kuliner": {
     nama: "Konten Kuliner",
-    tagline: "Membuat cafe & restoran Anda tampil menggugah selera di mata audiens",
+    tagline: "Foto menu, video ulasan, dan konten media sosial cafe atau restoran.",
     heroImage: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=85&auto=format&fit=crop",
     heroAlt: "Suasana restoran dengan penataan meja dan pencahayaan hangat",
     accentColor: "orange",
-    deskripsi: "Dari tekstur hidangan hingga suasana meja, detail kecil dapat menjadi awal cerita yang kuat. Vistara membantu cafe dan restoran mengemas cerita tersebut melalui food photography, video review, serta kolaborasi dengan food content creator. Kami menyusun konten menu, promosi, dan media sosial yang sesuai karakter usaha, dengan informasi yang jujur dan visual yang memperlihatkan pengalaman kuliner sebenarnya.",
+    deskripsi: "Vistara memproduksi foto hidangan, video ulasan, serta konten menu dan promosi untuk cafe atau restoran. Tim juga mengatur kolaborasi dengan kreator kuliner dan mengelola konten media sosial sesuai karakter usaha.",
     supportingImage: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1000&q=85&auto=format&fit=crop",
     supportingAlt: "Interior cafe dan area sajian untuk pengunjung",
     layananList: [

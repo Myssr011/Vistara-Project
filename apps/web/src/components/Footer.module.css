@@ -1,11 +1,14 @@
 .footer { margin-top: auto; padding: 32px 24px; background: var(--page-bg); color: var(--subtle); border-top: 1px solid var(--line); }
-.inner { max-width: 1440px; margin-inline: auto; display: flex; align-items: center; gap: 24px; }
+.inner { max-width: 1440px; margin-inline: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 32px; }
 .brand { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: var(--ink); font-family: var(--font-montserrat), sans-serif; font-size: 15px; font-weight: 600; }
 .brand img { object-fit: contain; }
 .brand:focus-visible { outline: 2px solid var(--chrome-accent); outline-offset: 4px; }
-.inner p { border-left: 1px solid var(--line); padding-left: 24px; font-size: 12px; line-height: 1.7; }
+.inner nav { display: flex; flex-wrap: wrap; gap: 4px 24px; margin-left: auto; }
+.inner nav a { display: inline-flex; align-items: center; min-height: 44px; font-size: 13px; }
+.inner nav a:hover { color: var(--chrome-accent); text-decoration: underline; text-underline-offset: 4px; }
+.inner p { width: 100%; border-top: 1px solid var(--line); padding-top: 16px; font-size: 12px; line-height: 1.7; }
 :global(:root[data-theme="dark"]) .brand img { filter: brightness(0) invert(1); }
 @media (max-width: 599px) {
   .inner { justify-content: center; flex-wrap: wrap; gap: 8px 16px; text-align: center; }
-  .inner p { padding-left: 0; border: 0; }
+  .inner nav { justify-content: center; margin-left: 0; gap: 4px 16px; }
 }

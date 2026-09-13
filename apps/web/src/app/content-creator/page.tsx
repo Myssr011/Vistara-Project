@@ -24,7 +24,7 @@ export default async function CreatorPage({ searchParams }: PageProps<"/content-
     <header className={styles.intro}>
       <p className={styles.eyebrow}>VISTARA MEDIA INDONESIA</p>
       <h1>Content Creator Vistara</h1>
-      <p>Kreator terpilih yang berkolaborasi bersama brand melalui Vistara Media Indonesia.</p>
+      <p>Profil kreator di bidang perjalanan, kuliner, properti, dan fashion.</p>
     </header>
     <section className={styles.directory} aria-label="Direktori content creator">
       <nav className={styles.filters} aria-label="Filter niche kreator">

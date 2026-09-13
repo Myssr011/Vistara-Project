@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ArrowLeft } from "lucide-react";
 import {
   INSIGHT_KATEGORI,
   formatTanggal,
@@ -42,9 +43,9 @@ export default async function InsightDetailPage({
   const kategori = INSIGHT_KATEGORI[insight.kategori];
 
   return (
-    <main className="mx-auto w-full max-w-3xl flex-1 px-4 py-8">
-      <Link href="/" className="text-sm text-primary hover:underline">
-        ← Kembali ke beranda
+    <main id="main-content" className="detail-page mx-auto w-full max-w-3xl flex-1 px-4 py-8">
+      <Link href="/" className="inline-flex min-h-11 items-center gap-2 text-sm text-primary hover:underline">
+        <ArrowLeft size={17} aria-hidden="true" />Kembali ke beranda
       </Link>
 
       <span

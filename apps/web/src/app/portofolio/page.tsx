@@ -44,19 +44,19 @@ export default async function PortfolioPage({ searchParams }: PageProps<"/portof
   ]);
 
   return <ExplorePage>
-    <PageIntro label="Portofolio" title="Kenali mitra. Temukan pilihan." description="Di balik setiap tempat, ada mitra dengan cerita dan karakternya sendiri. Jelajahi koleksi penginapan, hunian, dan kuliner di Vistara."><span className="explore-count"><UsersRound size={20} aria-hidden="true" />{total} mitra ditemukan</span></PageIntro>
+    <PageIntro label="Portofolio" title="Portofolio mitra" description="Hotel, apartemen, cafe, dan restoran yang dikelola mitra Vistara."><span className="explore-count"><UsersRound size={20} aria-hidden="true" />{total} mitra ditemukan</span></PageIntro>
     <section className="explore-wrap collection-body" aria-label="Direktori mitra">
       <CollectionFilters key={`${search}:${category}`} action="/portofolio" query={search} placeholder="Nama mitra atau kota">
         <label>Bidang<select aria-label="Bidang" name="kategori" defaultValue={categories.some(item => item.slug === category) ? category : ""}><option value="">Semua bidang</option>{categories.map(item => <option key={item.slug} value={item.slug}>{item.nama}</option>)}</select></label>
       </CollectionFilters>
-      <div className="collection-result-heading"><h2>Koleksi mitra Vistara</h2><span>{total} mitra dengan listing terpublikasi</span></div>
+      <div className="collection-result-heading"><h2>Mitra dan properti</h2><span>{total} mitra dengan listing terbit</span></div>
       {partners.length ? <div className="partner-grid">{partners.map(partner => {
         const first = partner.listings[0];
         const image = first?.images[0]?.url;
         const categoriesLabel = [...new Set(partner.listings.map(listing => listing.category.nama))].join(" / ");
         return <article className="partner-card" key={partner.id}>
           <div className="partner-image">{image ? <Image src={image} alt={`Pilihan tempat ${partner.namaUsaha}`} fill sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw" /> : <Building2 size={40} aria-hidden="true" />}<span>{categoriesLabel}</span></div>
-          <div className="partner-copy"><p className="explore-eyebrow">{partner._count.listings} PILIHAN TEMPAT</p><h3>{partner.namaUsaha}</h3><p>{partner.deskripsi ?? "Jelajahi pilihan tempat dari mitra Vistara."}</p>
+          <div className="partner-copy"><p className="explore-eyebrow">{partner._count.listings} tempat</p><h3>{partner.namaUsaha}</h3>{partner.deskripsi && <p>{partner.deskripsi}</p>}
             <ul className="partner-places">{partner.listings.map(listing => <li key={listing.slug}><Link href={`/${listing.category.slug}/${listing.slug}`}>{listing.judul}<ArrowUpRight size={16} aria-hidden="true" /></Link><span><MapPin size={13} aria-hidden="true" />{listing.lokasi}</span></li>)}</ul>
             {first && <Link className="explore-text-link" href={`/${first.category.slug}?q=${encodeURIComponent(partner.namaUsaha)}`}>Jelajahi koleksi<ArrowUpRight size={17} aria-hidden="true" /></Link>}
           </div>

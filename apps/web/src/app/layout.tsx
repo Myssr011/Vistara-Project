@@ -22,7 +22,7 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} — Satu pencarian, semua kebutuhan`,
+    default: `${SITE_NAME} | Properti dan kreator`,
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,

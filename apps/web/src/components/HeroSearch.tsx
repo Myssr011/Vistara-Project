@@ -35,13 +35,10 @@ export default function HeroSearch() {
       <div className="hero-shade" />
       <div className="hero-content">
         <h1>Vistara</h1>
-        <p className="hero-subtitle">Menghubungkan Brand, Properti, dan Audiens Melalui Konten Kreatif.</p>
+        <p className="hero-subtitle">Cari properti dan kreator untuk kebutuhan brand Anda.</p>
         <div className="hero-toolbar-slot">
           <span ref={anchor} className="hero-toolbar-anchor" aria-hidden="true" />
           <div className="hero-toolbar transition-all duration-300" data-sticky={sticky}>
-            <div className="hero-toolbar-backdrop" aria-hidden="true">
-              <Image src={HERO_IMAGE} alt="" fill sizes="100vw" className="hero-photo" />
-            </div>
             <div className="hero-toolbar-inner"><SearchBar compact={sticky} /></div>
           </div>
         </div>

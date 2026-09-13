@@ -43,8 +43,9 @@ export default async function SearchPage({ searchParams }: PageProps<"/cari">) {
   }));
 
   return (
-    <main className="flex-1">
+    <main id="main-content" className="search-page flex-1">
       <div className="mx-auto w-full max-w-3xl px-4 pt-8">
+      <h1 className="mb-5 text-2xl font-semibold">Cari di Vistara</h1>
         <SearchBar defaultValue={query} />
       </div>
 
@@ -54,6 +55,7 @@ export default async function SearchPage({ searchParams }: PageProps<"/cari">) {
             listings={cards}
             judul={`Hasil pencarian "${query}"`}
             deskripsi={`${cards.length} listing ditemukan.`}
+            tampilkanTrending={false}
           />
         </div>
       ) : (

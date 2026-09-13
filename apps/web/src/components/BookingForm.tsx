@@ -11,9 +11,9 @@ export default function BookingForm({ listingSlug }: { listingSlug: string }) {
       <button
         type="button"
         onClick={() => setTerbuka(true)}
-        className="mt-4 w-full rounded-full bg-primary px-4 py-2.5 text-sm font-medium text-white transition hover:bg-primary-deep"
+        className="mt-4 min-h-11 w-full rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-white transition hover:bg-primary-deep"
       >
-        Booking / Kontak
+        Ajukan booking
       </button>
     );
   }
@@ -21,19 +21,19 @@ export default function BookingForm({ listingSlug }: { listingSlug: string }) {
   return (
     <form action="/api/booking" method="post" className="mt-4 space-y-3">
       <input type="hidden" name="listingSlug" value={listingSlug} />
-      <input name="nama" required placeholder="Nama" className={inputClass} />
-      <input name="noHp" required inputMode="tel" placeholder="Nomor HP" className={inputClass} />
-      <input type="date" name="tanggal" aria-label="Tanggal keperluan" className={inputClass} />
-      <textarea name="catatan" rows={3} placeholder="Keperluan" className={inputClass} />
+      <label className="block text-sm">Nama<input name="nama" required autoComplete="name" className={inputClass} /></label>
+      <label className="block text-sm">Nomor HP<input name="noHp" required type="tel" autoComplete="tel" className={inputClass} /></label>
+      <label className="block text-sm">Tanggal keperluan<input type="date" name="tanggal" className={inputClass} /></label>
+      <label className="block text-sm">Catatan<textarea name="catatan" rows={3} className={inputClass} /></label>
       <button
         type="submit"
-        className="w-full rounded-full bg-primary px-4 py-2.5 text-sm font-medium text-white transition hover:bg-primary-deep"
+        className="min-h-11 w-full rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-white transition hover:bg-primary-deep"
       >
-        Kirim
+        Kirim permintaan
       </button>
     </form>
   );
 }
 
 const inputClass =
-  "w-full rounded-lg border border-black/10 bg-white px-3 py-2 text-sm outline-none focus:border-primary";
+  "mt-2 min-h-11 w-full rounded-md border border-[var(--line)] bg-[var(--panel-bg)] px-3 py-2 text-base focus:border-primary";
